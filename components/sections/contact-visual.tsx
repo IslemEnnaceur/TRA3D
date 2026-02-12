@@ -68,13 +68,14 @@ export default function ContactVisual() {
             </div>
 
             <div className="px-4">
-                <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Trusted by industry leaders</p>
+                {/* <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Trusted by industry leaders</p>
                 <div className="flex flex-wrap gap-8 opacity-40 grayscale hover:grayscale-0 transition-colors duration-500">
                     <div className="text-xl font-black italic">MARRIOTT</div>
                     <div className="text-xl font-black italic">HILTON</div>
                     <div className="text-xl font-black italic">TACO BELL</div>
-                </div>
+                </div> */}
             </div>
+
         </motion.div>
     )
 }

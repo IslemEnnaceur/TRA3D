@@ -18,6 +18,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "TRA 3D - Augmented Reality Menus for Restaurants",
   description: "Transform your restaurant, café, or bar with AR-powered menus. Let customers visualize dishes in 3D before ordering—no app required.",
+  icons: {
+    icon: "/logo.ico",
+  },
 };
 
 export default function RootLayout({

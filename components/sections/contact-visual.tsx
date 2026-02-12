@@ -3,13 +3,19 @@
 import { motion } from "framer-motion"
 import { Shield, Sparkles, Zap, Users } from "lucide-react"
 
+import { useTranslations } from "next-intl"
+
 export default function ContactVisual() {
-    const benefits = [
-        { icon: <Zap className="size-5 text-primary" />, text: "30% average order lift" },
-        { icon: <Users className="size-5 text-primary" />, text: "Used by 500+ global venues" },
-        { icon: <Shield className="size-5 text-primary" />, text: "GDPR & Privacy Compliant" },
-        { icon: <Sparkles className="size-5 text-primary" />, text: "No app download required" },
-    ]
+    const t = useTranslations("Contact.visual")
+    const benefits = t.raw("benefits").map((text: string, i: number) => {
+        const icons = [
+            <Zap key="zap" className="size-5 text-primary" />,
+            <Users key="users" className="size-5 text-primary" />,
+            <Shield key="shield" className="size-5 text-primary" />,
+            <Sparkles key="sparkles" className="size-5 text-primary" />
+        ]
+        return { icon: icons[i], text }
+    })
 
     return (
         <motion.div
@@ -26,19 +32,21 @@ export default function ContactVisual() {
                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
                         <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
                     </span>
-                    Next Demo: Tomorrow 10:00 AM
+                    {t("badge")}
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-bold leading-tight">
-                    See your menu come to life with <span className="text-primary">TRA 3D</span>
+                    {t.rich("title", {
+                        primary: (chunks) => <span className="text-primary">{chunks}</span>
+                    })}
                 </h2>
 
                 <p className="text-xl text-muted-foreground leading-relaxed">
-                    Book a 15-minute tailored demo where we’ll show you exactly how AR will look at your venue and project your potential ROI.
+                    {t("subtitle")}
                 </p>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    {benefits.map((b, i) => (
+                    {benefits.map((b: { icon: React.ReactNode; text: string }, i: number) => (
                         <motion.div
                             key={i}
                             initial={{ opacity: 0, y: 10 }}
@@ -62,18 +70,13 @@ export default function ContactVisual() {
                     </div>
                 </div>
                 <div>
-                    <p className="text-sm font-bold">Fast-Track Support</p>
-                    <p className="text-xs text-muted-foreground">Average response time: <span className="text-primary font-bold">1h 45m</span></p>
+                    <p className="text-sm font-bold">{t("support.title")}</p>
+                    <p className="text-xs text-muted-foreground">{t("support.subtitle")}</p>
                 </div>
             </div>
 
             <div className="px-4">
-                {/* <p className="text-xs font-bold text-muted-foreground uppercase tracking-widest mb-4">Trusted by industry leaders</p>
-                <div className="flex flex-wrap gap-8 opacity-40 grayscale hover:grayscale-0 transition-colors duration-500">
-                    <div className="text-xl font-black italic">MARRIOTT</div>
-                    <div className="text-xl font-black italic">HILTON</div>
-                    <div className="text-xl font-black italic">TACO BELL</div>
-                </div> */}
+                {/* Trusted symbols could go here */}
             </div>
 
         </motion.div>

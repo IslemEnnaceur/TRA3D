@@ -1,0 +1,460 @@
+{
+    "Index": {
+        "title": "TRA 3D - Immersive AR Commerce Platform",
+        "description": "Boost your sales with immersive AR menus and 3D product previews. No app required."
+    },
+    "Navigation": {
+        "home": "Home",
+        "pricing": "Pricing",
+        "faq": "FAQ",
+        "contact": "Contact"
+    },
+    "Hero": {
+        "title": "Scanni <highlight>W 5alli l’espace yahki</highlight>",
+        "subtitle": "AR menus that boost orders by 30% — no app required",
+        "description": "Customers scan. See dishes in 3D. Order more. Works on any phone.",
+        "cta": "Request a Quote",
+        "demo": "Watch 30s Demo",
+        "trust": "✓ 5-day turnaround ✓ Updates included for 30 days ✓ Custom 3D models"
+    },
+    "Banner": {
+        "venues": "<bold>500+ venues</bold> already using AR Code",
+        "lift": "<bold>30% average order increase</bold>",
+        "no_app": "<bold>No app required</bold>"
+    },
+    "ProblemSolution": {
+        "problem": {
+            "badge": "The Problem",
+            "title": "Customers Order Less When They Can't See It",
+            "items": [
+                "Tiny menu photos don't show portion size",
+                "Descriptions don't match expectations",
+                "Customers play it safe with familiar items"
+            ]
+        },
+        "solution": {
+            "badge": "The Solution",
+            "title": "AR Menus Build Confidence & Increase Orders",
+            "items": [
+                "Life-size 3D models on their table",
+                "See exact portions before ordering",
+                "Explore new dishes risk-free"
+            ]
+        }
+    },
+    "HowItWorks": {
+        "title": "How It Works",
+        "subtitle": "Get started in 3 simple steps",
+        "steps": [
+            {
+                "title": "We Create Your QR Codes",
+                "description": "Send us photos of your dishes. We build 3D models in 5 days."
+            },
+            {
+                "title": "Add to Your Menu",
+                "description": "Print QR codes next to each dish. That's it."
+            },
+            {
+                "title": "Customers Scan & Order More",
+                "description": "They see dishes in AR, get excited, order 30% more."
+            }
+        ]
+    },
+    "Features": {
+        "title": "Why Choose AR Code?",
+        "subtitle": "Everything you need to create an immersive dining experience",
+        "cards": {
+            "no_app": {
+                "title": "No App Required",
+                "description": "Works directly in the phone camera. Customers simply scan and see AR instantly—no downloads, no friction."
+            },
+            "compatibility": {
+                "title": "Universal Compatibility",
+                "description": "Works on iOS, Android, Meta Horizon OS, and VisionOS. Reach every customer regardless of their device."
+            },
+            "sales": {
+                "title": "Boost Sales",
+                "description": "Customers order 30% more when they can visualize dishes in 3D. Turn curiosity into sales."
+            }
+        }
+    },
+    "InteractiveDemo": {
+        "title": "Try It Yourself",
+        "subtitle": "Scan this QR code with your phone camera to see AR in action",
+        "qr_label": "Demo QR Code",
+        "cta_text": "👆 Scanni QR",
+        "stats": {
+            "value": "30%",
+            "label": "Order Increase"
+        },
+        "instructions": [
+            {
+                "title": "1. Open Camera",
+                "description": "No app download needed"
+            },
+            {
+                "title": "2. Scan QR Code",
+                "description": "Point at the code above"
+            },
+            {
+                "title": "3. See AR Magic",
+                "description": "Dish appears in 3D"
+            }
+        ]
+    },
+    "Content": {
+        "platforms": "Android OS, iOS/iPadOS, Meta Horizon OS, Android XR & VisionOS",
+        "qr_alts": {
+            "f1": "QR Code to AR F1 Car",
+            "horse": "QR Code to AR Horse Statue",
+            "trex": "QR Code to AR T-Rex",
+            "woman": "QR Code to AR Woman"
+        },
+        "how_to_scan": {
+            "title": "How to Scan an AR Code?",
+            "lead": "An AR Code is designed to be universally rendered without any app on all mobile devices, including AR/VR headsets.",
+            "description": "Immersive AR rendering is supported on iOS, Android OS, visionOS, and Meta Horizon OS. Even older Android devices will have access to immersive WebAR thanks to our low-power SLAM rendering technology. Additionally, AR Codes support advanced AR and AI features through our solutions such as AR Face Filters and AI Codes, enhancing AR experiences across a wide range of compatible smartphone devices."
+        }
+    },
+    "PricingPreview": {
+        "title": "Simple, Transparent Pricing",
+        "subtitle": "One-time payment. No monthly subscriptions.",
+        "billing": "once",
+        "cta_full": "View full pricing details →",
+        "labels": {
+            "most_popular": "Most Popular"
+        },
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "price": "$99",
+                "description": "Perfect for small cafes",
+                "cta": "Get Started",
+                "features": [
+                    "5 Custom AR QR Codes",
+                    "5 3D Food Models",
+                    "30 Days Free Updates",
+                    "Standard Support"
+                ]
+            },
+            "pro": {
+                "name": "Professional",
+                "price": "$249",
+                "description": "Ideal for restaurants",
+                "cta": "Most Popular",
+                "features": [
+                    "15 Custom AR QR Codes",
+                    "15 3D Food Models",
+                    "60 Days Free Updates",
+                    "Priority Support",
+                    "Custom Branding"
+                ]
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "price": "Custom",
+                "description": "For large venues & chains",
+                "cta": "Contact Us",
+                "features": [
+                    "Unlimited AR QR Codes",
+                    "Unlimited 3D Food Models",
+                    "Lifetime Updates",
+                    "Dedicated Account Manager",
+                    "Multi-location Support"
+                ]
+            }
+        }
+    },
+    "FAQSection": {
+        "title": "Frequently Asked Questions",
+        "subtitle": "Everything you need to know about AR Code",
+        "cta_full": "View All FAQs →",
+        "questions": [
+            {
+                "q": "Do customers need to download an app?",
+                "a": "No! AR Code works directly in the phone's camera app. Customers simply scan the QR code and the AR experience launches instantly in their browser. No downloads, no friction."
+            },
+            {
+                "q": "How long does setup take?",
+                "a": "From start to finish, it takes 5-7 days. You send us photos of your dishes, we create the 3D models, and deliver your custom QR codes ready to print."
+            },
+            {
+                "q": "What if I update my menu?",
+                "a": "Just contact us! We'll update the 3D models for you. The first 30 days of updates are free, and after that we offer affordable update packages."
+            },
+            {
+                "q": "Does it work on all phones?",
+                "a": "Yes! AR Code works on iOS 11+, Android 7+, and all modern smartphones. We support 99% of devices your customers use."
+            },
+            {
+                "q": "How much does it cost?",
+                "a": "Pricing starts at $99 for 5 QR codes. We offer packages for different venue sizes. Check our pricing page for full details. No subscriptions—just a one-time payment."
+            }
+        ]
+    },
+    "TrustSignals": {
+        "gdpr": {
+            "title": "GDPR Compliant",
+            "description": "Your data and customer privacy are our top priority."
+        },
+        "uptime": {
+            "title": "99.9% Uptime",
+            "description": "Reliable infrastructure ensures your menus are always accessible."
+        },
+        "ssl": {
+            "title": "SSL Encrypted",
+            "description": "All connections are secure and encrypted end-to-end."
+        },
+        "global": {
+            "title": "Global Reach",
+            "description": "Trusted by over 500 venues across 20+ countries."
+        }
+    },
+    "CTA": {
+        "title": "Ready to Boost Your Sales by 30%?",
+        "subtitle": "Join 500+ venues already using AR Code",
+        "buttons": {
+            "quote": "Request a Quote",
+            "pricing": "See Pricing"
+        },
+        "trust": "✓ 5-day turnaround ✓ Updates included for 30 days ✓ Custom 3D models"
+    },
+    "Footer": {
+        "links": {
+            "features": "Features",
+            "solution": "Solution",
+            "customers": "Customers",
+            "pricing": "Pricing",
+            "help": "Help",
+            "about": "About"
+        },
+        "rights": "© {year} TRA 3D, All rights reserved"
+    },
+    "EmailCapture": {
+        "title": "Get a free AR demo for your venue",
+        "subtitle": "Send us your email and we'll show you how your menu looks in 3D.",
+        "placeholder": "your@email.com",
+        "button": "Send Demo"
+    },
+    "Pricing": {
+        "title": "Pricing | Affordable AR Solutions",
+        "description": "Transparent pricing for AR menus and 3D product visualization. Choose a plan that scales with your business—no hidden fees.",
+        "schema": {
+            "name": "TRA 3D AR Commerce Platform",
+            "description": "Augmented Reality menu and product visualization solution."
+        },
+        "badge": "Pricing",
+        "header": {
+            "title": "Pricing made for <primary>growth</primary>",
+            "subtitle": "The #1 AR Menu & product visualization platform. Boost sales with 3D models directly in your customer's space."
+        },
+        "billing": {
+            "monthly": "Monthly",
+            "yearly": "Yearly",
+            "discount": "Save 20%"
+        },
+        "labels": {
+            "month": "/mo",
+            "year": "/yr",
+            "custom": "Custom",
+            "tailored": "tailored billing",
+            "most_popular": "Most Popular",
+            "included": "What's included",
+            "cta_get_started": "Get Started",
+            "cta_contact": "Contact Us",
+            "cta_free_trial": "Start Free Trial"
+        },
+        "plans": {
+            "starter": {
+                "name": "Starter",
+                "description": "Perfect for single restaurants or small cafés.",
+                "features": [
+                    "5 Custom AR QR Codes",
+                    "Core 3D Dish Modeling",
+                    "Basic Scan Analytics",
+                    "Email Support (24h)",
+                    "Standard QR Templates"
+                ]
+            },
+            "pro": {
+                "name": "Pro",
+                "description": "Best for growing venues and group restaurants.",
+                "features": [
+                    "Unlimited AR QR Codes",
+                    "Up to 25 Premium Dish Models",
+                    "Heatmaps & Real-time Analytics",
+                    "Priority WhatsApp Support",
+                    "Custom Branding & White-label",
+                    "Interactive Menu Upsells"
+                ]
+            },
+            "enterprise": {
+                "name": "Enterprise",
+                "description": "Customized solutions for massive hotel chains.",
+                "features": [
+                    "Unlimited QR & 3D Models",
+                    "Dedicated Account Manager",
+                    "Multi-location Dashboard",
+                    "API Integration",
+                    "Custom Feature Development",
+                    "On-site Setup & Training"
+                ]
+            }
+        }
+    },
+    "FAQ": {
+        "title": "FAQ | Everything You Need to Know",
+        "description": "Find answers to technical requirements, device compatibility, and how to get started with AR menus. All your questions about TRA 3D answered here.",
+        "header": {
+            "title": "Common <highlight>Questions</highlight>",
+            "subtitle": "Find answers to technical requirements, pricing, and how TRA 3D can skyrocket your conversion rates."
+        },
+        "search_placeholder": "Search for an objection...",
+        "no_results": "No matches found for your search.",
+        "try_searching": "Try searching for \"app\" or \"POS\".",
+        "cta": {
+            "title": "Still have reservations?",
+            "subtitle": "Speak directly with our AR specialists. We'll help you understand if TRA 3D is right for your venue.",
+            "book_demo": "Book a 15m Demo",
+            "whatsapp": "Chat on WhatsApp"
+        },
+        "categories": {
+            "general": {
+                "title": "General Questions",
+                "questions": [
+                    {
+                        "q": "Do customers need to download an app?",
+                        "a": "Absolutely not. One of TRA 3D's core strengths is its frictionless experience. Customers simply scan a QR code with their native smartphone camera, and the AR experience launches instantly in their mobile browser (Safari, Chrome, etc.)."
+                    },
+                    {
+                        "q": "What is TRA 3D and how does it help my business?",
+                        "a": "TRA 3D is an AR Commerce platform designed to bridge the gap between digital menus and physical reality. We turn your 2D photos into high-fidelity 3D models that customers can project onto their tables, leading to a 25-40% increase in order value and higher engagement."
+                    },
+                    {
+                        "q": "How do I get my QR codes?",
+                        "a": "Once you choose a plan, you upload your menu photos to our portal. Our team (or AI, depending on your tier) creates the 3D models. We then provide you with high-resolution QR codes that you can print on table tents, menus, or posters."
+                    }
+                ]
+            },
+            "technical": {
+                "title": "Technical & Integration",
+                "questions": [
+                    {
+                        "q": "Which devices are compatible with TRA 3D?",
+                        "a": "TRA 3D supports AR Quick Look on iOS (iPhone/iPad) and Scene Viewer on Android. This covers over 95% of modern smartphones released in the last 4-5 years."
+                    },
+                    {
+                        "q": "Can I integrate this with my existing POS system?",
+                        "a": "Our Enterprise plan offers robust API access and webhooks, allowing you to sync AR views with inventory and order placement. For smaller plans, the codes are independent and work alongside any existing setup."
+                    },
+                    {
+                        "q": "What format of photos do I need to provide?",
+                        "a": "Standard high-resolution mobile photos of your dishes/products from 3-4 different angles are sufficient. For the best results, we recommend photos taken in natural lighting without busy backgrounds."
+                    }
+                ]
+            },
+            "billing": {
+                "title": "Billing & Support",
+                "questions": [
+                    {
+                        "q": "Is there a long-term contract?",
+                        "a": "Standard plans are available on month-to-month terms. Yearly subscriptions offer a 20% discount but are paid upfront. You can upgrade or downgrade at any time."
+                    },
+                    {
+                        "q": "What kind of support is provided?",
+                        "a": "Starter plans include standard email support. Professional and Enterprise plans benefit from priority WhatsApp support and a dedicated account manager to ensure your AR menu is a success."
+                    }
+                ]
+            }
+        }
+    },
+    "Contact": {
+        "title": "Contact Us | Start Your AR Project",
+        "description": "Get in touch with TRA 3D experts today. Whether you need a custom AR menu for your restaurant or 3D visualization for retail, we're here to help.",
+        "header": {
+            "title": "Let's build your <highlight>AR Menu</highlight>",
+            "subtitle": "Fill out the form below or reach out directly via WhatsApp for a faster response."
+        },
+        "form": {
+            "title": "Inquiry Form",
+            "name": "Full Name",
+            "email": "Business Email",
+            "venue": "Venue Name",
+            "message": "Project Details",
+            "submit": "Request My Free AR Demo",
+            "submitting": "Preparing Your Demo...",
+            "success": {
+                "title": "You're on the list!",
+                "subtitle": "We've received your request. One of our AR specialists will reach out within 2 hours to schedule your tailored demo.",
+                "cta": "Ready now? Book via Calendly"
+            },
+            "industry": {
+                "label": "Industry",
+                "placeholder": "Select Industry",
+                "options": {
+                    "fine-dining": "Fine Dining",
+                    "fast-casual": "Fast Casual",
+                    "hotel": "Hotel / Resort",
+                    "food-truck": "Food Truck",
+                    "partnership": "Agency / Partnership"
+                }
+            },
+            "project_size": {
+                "label": "Menu Items",
+                "placeholder": "Number of items",
+                "options": {
+                    "1-5": "1 - 5 items",
+                    "6-15": "6 - 15 items",
+                    "16-30": "16 - 30 items",
+                    "30+": "30+ items"
+                }
+            }
+        },
+        "methods": {
+            "whatsapp": {
+                "title": "WhatsApp Business",
+                "description": "Chat with an expert now"
+            },
+            "email": {
+                "title": "Send an Email",
+                "description": "contact@tra3d.com"
+            }
+        },
+        "visual": {
+            "badge": "Next Demo: Tomorrow 10:00 AM",
+            "title": "See your menu come to life with <primary>TRA 3D</primary>",
+            "subtitle": "Book a 15-minute tailored demo where we’ll show you exactly how AR will look at your venue and project your potential ROI.",
+            "benefits": [
+                "30% average order lift",
+                "Used by 500+ global venues",
+                "GDPR & Privacy Compliant",
+                "No app download required"
+            ],
+            "support": {
+                "title": "Fast-Track Support",
+                "subtitle": "Average response time: 1h 45m"
+            }
+        },
+        "faq": {
+            "title": "Common Questions",
+            "questions": [
+                {
+                    "q": "What happens after I request a demo?",
+                    "a": "A TRA 3D specialist will review your venue details and email you within 2 hours to pick a time. During the call, we'll show you a live AR prototype using items from your category and project your potential ROI."
+                },
+                {
+                    "q": "Do I need to send professional photographs?",
+                    "a": "Standard smartphone photos work perfectly. We leverage AI-assisted photogrammetry to turn your photos into high-fidelity 3D models."
+                },
+                {
+                    "q": "How long is the typical setup process?",
+                    "a": "Enterprise clients typically go live in 5-7 business days. This includes model creation, QR generation, and quality assurance."
+                },
+                {
+                    "q": "Is there a monthly subscription fee?",
+                    "a": "No, we believe in transparent, one-time pricing for the assets. You own the 3D models and the forever-active QR codes."
+                }
+            ]
+        }
+    }
+}

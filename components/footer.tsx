@@ -1,38 +1,23 @@
-import Link from "next/link";
+"use client";
 
-const links = [
-  {
-    title: "Features",
-    href: "#",
-  },
-  {
-    title: "Solution",
-    href: "#",
-  },
-  {
-    title: "Customers",
-    href: "#",
-  },
-  {
-    title: "Pricing",
-    href: "#",
-  },
-  {
-    title: "Help",
-    href: "#",
-  },
-  {
-    title: "About",
-    href: "#",
-  },
-];
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
 export default function FooterSection() {
+  const t = useTranslations("Footer");
+
+  const links = [
+    { title: t("links.features"), href: "#" },
+    { title: t("links.solution"), href: "#" },
+    { title: t("links.customers"), href: "#" },
+    { title: t("links.pricing"), href: "/pricing" },
+    { title: t("links.help"), href: "/faq" },
+    { title: t("links.about"), href: "/contact" },
+  ];
+
   return (
     <footer className="py-16 md:py-32">
       <div className="mx-auto max-w-5xl px-6">
-
-
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
           {links.map((link, index) => (
             <Link
@@ -45,6 +30,7 @@ export default function FooterSection() {
           ))}
         </div>
         <div className="my-8 flex flex-wrap justify-center gap-6 text-sm">
+          {/* Social Links - aria-labels could also be localized if needed, but these are brand names */}
           <Link
             href="#"
             target="_blank"
@@ -65,6 +51,7 @@ export default function FooterSection() {
               ></path>
             </svg>
           </Link>
+          {/* ... other social links (LinkedIn, Facebook, Threads, Instagram, TikTok) ... */}
           <Link
             href="#"
             target="_blank"
@@ -173,11 +160,10 @@ export default function FooterSection() {
         </div>
 
         <span className="text-muted-foreground block text-center text-sm">
-
-          {" "}
-          © {new Date().getFullYear()} TRA 3D, All rights reserved
+          {t("rights", { year: new Date().getFullYear() })}
         </span>
       </div>
     </footer>
   );
 }
+

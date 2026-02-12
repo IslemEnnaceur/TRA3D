@@ -1,17 +1,22 @@
+"use client";
+
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Settings2, Sparkles, Zap } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { ReactNode } from "react";
 
 export default function Features() {
+  const t = useTranslations("Features");
+
   return (
     <section className="bg-zinc-50 py-16 md:py-32 dark:bg-transparent">
       <div className="@container mx-auto max-w-5xl px-6">
         <div className="text-center">
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
-            Why Choose AR Code?
+            {t("title")}
           </h2>
           <p className="mt-4">
-            Everything you need to create an immersive dining experience
+            {t("subtitle")}
           </p>
         </div>
         <div className="@min-4xl:max-w-full @min-4xl:grid-cols-3 mx-auto mt-8 grid max-w-sm gap-6 *:text-center md:mt-16">
@@ -21,12 +26,12 @@ export default function Features() {
                 <Zap className="size-6" aria-hidden />
               </CardDecorator>
 
-              <h3 className="mt-6 font-medium">No App Required</h3>
+              <h3 className="mt-6 font-medium">{t("cards.no_app.title")}</h3>
             </CardHeader>
 
             <CardContent>
               <p className="text-sm">
-                Works directly in the phone camera. Customers simply scan and see AR instantly—no downloads, no friction.
+                {t("cards.no_app.description")}
               </p>
             </CardContent>
           </Card>
@@ -37,12 +42,12 @@ export default function Features() {
                 <Settings2 className="size-6" aria-hidden />
               </CardDecorator>
 
-              <h3 className="mt-6 font-medium">Universal Compatibility</h3>
+              <h3 className="mt-6 font-medium">{t("cards.compatibility.title")}</h3>
             </CardHeader>
 
             <CardContent>
               <p className="mt-3 text-sm">
-                Works on iOS, Android, Meta Horizon OS, and VisionOS. Reach every customer regardless of their device.
+                {t("cards.compatibility.description")}
               </p>
             </CardContent>
           </Card>
@@ -53,12 +58,12 @@ export default function Features() {
                 <Sparkles className="size-6" aria-hidden />
               </CardDecorator>
 
-              <h3 className="mt-6 font-medium">Boost Sales</h3>
+              <h3 className="mt-6 font-medium">{t("cards.sales.title")}</h3>
             </CardHeader>
 
             <CardContent>
               <p className="mt-3 text-sm">
-                Customers order 30% more when they can visualize dishes in 3D. Turn curiosity into sales.
+                {t("cards.sales.description")}
               </p>
             </CardContent>
           </Card>
@@ -67,6 +72,7 @@ export default function Features() {
     </section>
   );
 }
+
 
 const CardDecorator = ({ children }: { children: ReactNode }) => (
   <div className="relative mx-auto size-36 duration-200 [--color-border:color-mix(in_oklab,var(--color-zinc-950)10%,transparent)] group-hover:[--color-border:color-mix(in_oklab,var(--color-zinc-950)20%,transparent)] dark:[--color-border:color-mix(in_oklab,var(--color-white)15%,transparent)] dark:group-hover:bg-white/5 dark:group-hover:[--color-border:color-mix(in_oklab,var(--color-white)20%,transparent)]">

@@ -22,7 +22,10 @@ const contactFormSchema = z.z.object({
 
 type ContactFormValues = z.infer<typeof contactFormSchema>
 
+import { useTranslations } from "next-intl"
+
 export default function ContactForm() {
+    const t = useTranslations("Contact.form")
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [isSuccess, setIsSuccess] = useState(false)
 
@@ -53,13 +56,13 @@ export default function ContactForm() {
                 <div className="flex justify-center mb-6">
                     <CheckCircle2 className="size-16 text-primary animate-pulse" />
                 </div>
-                <h2 className="text-3xl font-bold mb-4">You&apos;re on the list!</h2>
+                <h2 className="text-3xl font-bold mb-4">{t("success.title")}</h2>
                 <p className="text-muted-foreground mb-8 text-lg">
-                    We&apos;ve received your request. One of our AR specialists will reach out within 2 hours to schedule your tailored demo.
+                    {t("success.subtitle")}
                 </p>
                 <Button size="lg" className="w-full" asChild>
                     <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-                        Ready now? Book via Calendly <ChevronRight className="ml-2 size-4" />
+                        {t("success.cta")} <ChevronRight className="ml-2 size-4" />
                     </a>
                 </Button>
             </motion.div>
@@ -75,7 +78,7 @@ export default function ContactForm() {
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label htmlFor="name">Full Name</Label>
+                        <Label htmlFor="name">{t("name")}</Label>
                         <Input
                             id="name"
                             placeholder="John Doe"
@@ -85,7 +88,7 @@ export default function ContactForm() {
                         {errors.name && <p className="text-xs text-destructive">{errors.name.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="email">Work Email</Label>
+                        <Label htmlFor="email">{t("email")}</Label>
                         <Input
                             id="email"
                             type="email"
@@ -98,7 +101,7 @@ export default function ContactForm() {
                 </div>
 
                 <div className="space-y-2">
-                    <Label htmlFor="company">Company / Venue Name</Label>
+                    <Label htmlFor="company">{t("venue")}</Label>
                     <Input
                         id="company"
                         placeholder="La Bella Vita Bistro"
@@ -110,43 +113,43 @@ export default function ContactForm() {
 
                 <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
-                        <Label htmlFor="industry">Industry</Label>
+                        <Label htmlFor="industry">{t("industry.label")}</Label>
                         <select
                             id="industry"
                             {...register("industry")}
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            <option value="">Select Industry</option>
-                            <option value="fine-dining">Fine Dining</option>
-                            <option value="fast-casual">Fast Casual</option>
-                            <option value="hotel">Hotel / Resort</option>
-                            <option value="food-truck">Food Truck</option>
-                            <option value="partnership">Agency / Partnership</option>
+                            <option value="">{t("industry.placeholder")}</option>
+                            <option value="fine-dining">{t("industry.options.fine-dining")}</option>
+                            <option value="fast-casual">{t("industry.options.fast-casual")}</option>
+                            <option value="hotel">{t("industry.options.hotel")}</option>
+                            <option value="food-truck">{t("industry.options.food-truck")}</option>
+                            <option value="partnership">{t("industry.options.partnership")}</option>
                         </select>
                         {errors.industry && <p className="text-xs text-destructive">{errors.industry.message}</p>}
                     </div>
                     <div className="space-y-2">
-                        <Label htmlFor="projectSize">Menu Items</Label>
+                        <Label htmlFor="projectSize">{t("project_size.label")}</Label>
                         <select
                             id="projectSize"
                             {...register("projectSize")}
                             className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
                         >
-                            <option value="">Number of items</option>
-                            <option value="1-5">1 - 5 items</option>
-                            <option value="6-15">6 - 15 items</option>
-                            <option value="16-30">16 - 30 items</option>
-                            <option value="30+">30+ items</option>
+                            <option value="">{t("project_size.placeholder")}</option>
+                            <option value="1-5">{t("project_size.options.1-5")}</option>
+                            <option value="6-15">{t("project_size.options.6-15")}</option>
+                            <option value="16-30">{t("project_size.options.16-30")}</option>
+                            <option value="30+">{t("project_size.options.30+")}</option>
                         </select>
                         {errors.projectSize && <p className="text-xs text-destructive">{errors.projectSize.message}</p>}
                     </div>
                 </div>
 
                 <div className="space-y-2">
-                    <Label htmlFor="message">Tell us about your needs</Label>
+                    <Label htmlFor="message">{t("message")}</Label>
                     <Textarea
                         id="message"
-                        placeholder="I want to showcase my signature steaks and wine pairings..."
+                        placeholder="..."
                         className={`min-h-[120px] ${errors.message ? "border-destructive focus-visible:ring-destructive" : ""}`}
                         {...register("message")}
                     />
@@ -156,10 +159,10 @@ export default function ContactForm() {
                 <Button type="submit" disabled={isSubmitting} size="lg" className="w-full">
                     {isSubmitting ? (
                         <>
-                            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> Preparing Your Demo...
+                            <Loader2 className="mr-2 h-4 w-4 animate-spin" /> {t("submitting")}
                         </>
                     ) : (
-                        "Request My Free AR Demo"
+                        t("submit")
                     )}
                 </Button>
             </form>

@@ -1,19 +1,33 @@
 "use client";
-import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import React from "react";
+import { Menu, X } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
+import { useTranslations, useLocale } from "next-intl";
+import { useRouter, usePathname } from "next/navigation";
+import Link from "next/link";
 import Image from "next/image";
-
-const menuItems = [
-  { name: "Home", href: "/" },
-  { name: "Pricing", href: "/pricing" },
-  { name: "FAQ", href: "/faq" },
-  { name: "Contact", href: "/contact" },
-];
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
+  const t = useTranslations("Navigation");
+  const locale = useLocale();
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const menuItems = [
+    { name: t("home"), href: `/${locale}` },
+    { name: t("pricing"), href: `/${locale}/pricing` },
+    { name: t("faq"), href: `/${locale}/faq` },
+    { name: t("contact"), href: `/${locale}/contact` },
+  ];
+
+  const handleLanguageChange = (newLocale: string) => {
+    // pathname looks like "/en/pricing" or "/fr"
+    const segments = pathname.split("/");
+    segments[1] = newLocale;
+    router.push(segments.join("/"));
+  };
+
   return (
     <header>
       <nav
@@ -24,7 +38,7 @@ export const HeroHeader = () => {
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
             <div className="flex w-full items-center justify-between gap-12 lg:w-auto">
               <Link
-                href="/"
+                href={`/${locale}`}
                 aria-label="home"
                 className="flex items-center space-x-2"
               >
@@ -47,7 +61,7 @@ export const HeroHeader = () => {
               <button
                 onClick={() => setMenuState(!menuState)}
                 aria-label={menuState == true ? "Close Menu" : "Open Menu"}
-                className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
+                className="relative z-20 -m-2.5 -me-4 block cursor-pointer p-2.5 lg:hidden"
               >
                 <Menu className="in-data-[state=active]:rotate-180 in-data-[state=active]:scale-0 in-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
                 <X className="in-data-[state=active]:rotate-0 in-data-[state=active]:scale-100 in-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
@@ -88,12 +102,13 @@ export const HeroHeader = () => {
               <div className="flex items-center gap-3">
                 {/* Language Selector */}
                 <select
-                  className="px-3 py-1.5 text-sm border rounded-md bg-background"
-                  defaultValue="en"
+                  className="px-3 py-1.5 text-sm border rounded-md bg-background focus:ring-2 focus:ring-primary focus:outline-none transition-all cursor-pointer font-medium"
+                  value={locale}
+                  onChange={(e) => handleLanguageChange(e.target.value)}
                 >
                   <option value="en">EN</option>
-                  <option value="ar">AR</option>
                   <option value="fr">FR</option>
+                  <option value="ar">AR</option>
                 </select>
 
                 <ModeToggle />

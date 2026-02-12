@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { HeroHeader } from "@/components/hero8-header";
 import {
     Accordion,
@@ -9,99 +10,54 @@ import {
 } from "@/components/ui/accordion";
 import { motion } from "framer-motion";
 import { Search, MessageCircle, HelpCircle, Layers, ShieldCheck } from "lucide-react";
-import { useState } from "react";
+import Link from "next/link";
+import { useTranslations } from "next-intl";
 
-const faqCategories = [
-    {
-        id: "general",
-        title: "General Questions",
-        icon: <HelpCircle className="size-5" />,
-        questions: [
-            {
-                question: "Do customers need to download an app?",
-                answer: "Absolutely not. One of TRA 3D's core strengths is its frictionless experience. Customers simply scan a QR code with their native smartphone camera, and the AR experience launches instantly in their mobile browser (Safari, Chrome, etc.)."
-            },
-            {
-                question: "What is TRA 3D and how does it help my business?",
-                answer: "TRA 3D is an AR Commerce platform designed to bridge the gap between digital menus and physical reality. We turn your 2D photos into high-fidelity 3D models that customers can project onto their tables, leading to a 25-40% increase in order value and higher engagement."
-            },
-            {
-                question: "How do I get my QR codes?",
-                answer: "Once you choose a plan, you upload your menu photos to our portal. Our team (or AI, depending on your tier) creates the 3D models. We then provide you with high-resolution QR codes that you can print on table tents, menus, or posters."
-            }
-        ]
-    },
-    {
-        id: "technical",
-        title: "Technical & Integration",
-        icon: <Layers className="size-5" />,
-        questions: [
-            {
-                question: "Which devices are compatible with TRA 3D?",
-                answer: "TRA 3D supports AR Quick Look on iOS (iPhone/iPad) and Scene Viewer on Android. This covers over 95% of modern smartphones released in the last 4-5 years."
-            },
-            {
-                question: "Can I integrate this with my existing POS system?",
-                answer: "Our Enterprise plan offers robust API access and webhooks, allowing you to sync AR views with inventory and order placement. For smaller plans, the codes are independent and work alongside any existing setup."
-            },
-            {
-                question: "What format of photos do I need to provide?",
-                answer: "Standard high-resolution mobile photos of your dishes/products from 3-4 different angles are sufficient. For the best results, we recommend photos taken in natural lighting without busy backgrounds."
-            }
-        ]
-    },
-    {
-        id: "billing",
-        title: "Billing & Support",
-        icon: <ShieldCheck className="size-5" />,
-        questions: [
-            {
-                question: "Is there a long-term contract?",
-                answer: "Standard plans are available on month-to-month terms. Yearly subscriptions offer a 20% discount but are paid upfront. You can upgrade or downgrade at any time."
-            },
-            {
-                question: "What kind of support is provided?",
-                answer: "Starter plans include standard email support. Professional and Enterprise plans benefit from priority WhatsApp support and a dedicated account manager to ensure your AR menu is a success."
-            }
-        ]
-    }
-];
-
-export default function FAQPage() {
+export default function FAQClient() {
+    const t = useTranslations("FAQ");
     const [searchTerm, setSearchTerm] = useState("");
+
+    const faqCategories = [
+        {
+            id: "general",
+            title: t("categories.general.title"),
+            icon: <HelpCircle className="size-5" />,
+            questions: t.raw("categories.general.questions").map((q: { q: string; a: string }) => ({
+                question: q.q,
+                answer: q.a
+            }))
+        },
+        {
+            id: "technical",
+            title: t("categories.technical.title"),
+            icon: <Layers className="size-5" />,
+            questions: t.raw("categories.technical.questions").map((q: { q: string; a: string }) => ({
+                question: q.q,
+                answer: q.a
+            }))
+        },
+        {
+            id: "billing",
+            title: t("categories.billing.title"),
+            icon: <ShieldCheck className="size-5" />,
+            questions: t.raw("categories.billing.questions").map((q: { q: string; a: string }) => ({
+                question: q.q,
+                answer: q.a
+            }))
+        }
+    ];
 
     const filteredCategories = faqCategories.map(category => ({
         ...category,
-        questions: category.questions.filter(q =>
+        questions: category.questions.filter((q: { question: string; answer: string }) =>
             q.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
             q.answer.toLowerCase().includes(searchTerm.toLowerCase())
         )
     })).filter(category => category.questions.length > 0);
 
-    // JSON-LD Schema for SEO
-    const jsonLd = {
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faqCategories.flatMap(cat =>
-            cat.questions.map(q => ({
-                "@type": "Question",
-                "name": q.question,
-                "acceptedAnswer": {
-                    "@type": "Answer",
-                    "text": q.answer
-                }
-            }))
-        )
-    };
-
     return (
         <div className="min-h-screen bg-background text-foreground">
             <HeroHeader />
-
-            <script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-            />
 
             <main className="max-w-4xl mx-auto px-6 py-24">
                 <header className="text-center mb-16">
@@ -110,10 +66,12 @@ export default function FAQPage() {
                         animate={{ opacity: 1, y: 0 }}
                     >
                         <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight mb-6">
-                            Common <span className="text-primary italic">Questions</span>
+                            {t.rich("header.title", {
+                                highlight: (chunks) => <span className="text-primary italic">{chunks}</span>
+                            })}
                         </h1>
                         <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                            Find answers to technical requirements, pricing, and how TRA 3D can skyrocket your conversion rates.
+                            {t("header.subtitle")}
                         </p>
                     </motion.div>
 
@@ -122,7 +80,7 @@ export default function FAQPage() {
                         <Search className="absolute left-3 top-1/2 -translate-y-1/2 size-5 text-muted-foreground" />
                         <input
                             type="text"
-                            placeholder="Search for an objection..."
+                            placeholder={t("search_placeholder")}
                             value={searchTerm}
                             onChange={(e) => setSearchTerm(e.target.value)}
                             className="w-full h-12 pl-11 pr-4 rounded-2xl border border-primary/10 bg-muted/30 focus:outline-none focus:ring-2 focus:ring-primary/40 transition-all font-medium"
@@ -147,7 +105,7 @@ export default function FAQPage() {
                                 </div>
 
                                 <Accordion type="single" collapsible className="w-full space-y-4">
-                                    {category.questions.map((faq, index) => (
+                                    {category.questions.map((faq: { question: string; answer: string }, index: number) => (
                                         <AccordionItem
                                             key={index}
                                             value={`${category.id}-${index}`}
@@ -166,8 +124,8 @@ export default function FAQPage() {
                         ))
                     ) : (
                         <div className="text-center py-20 bg-muted/20 rounded-3xl border border-dashed border-primary/20">
-                            <p className="text-xl font-bold text-muted-foreground">No matches found for your search.</p>
-                            <p className="text-sm text-muted-foreground mt-2">Try searching for &quot;app&quot; or &quot;POS&quot;.</p>
+                            <p className="text-xl font-bold text-muted-foreground">{t("no_results")}</p>
+                            <p className="text-sm text-muted-foreground mt-2">{t("try_searching")}</p>
                         </div>
                     )}
                 </div>
@@ -179,22 +137,22 @@ export default function FAQPage() {
 
                     <div className="relative z-10">
                         <MessageCircle className="size-12 mx-auto mb-6 opacity-80" />
-                        <h2 className="text-3xl font-bold mb-4">Still have reservations?</h2>
+                        <h2 className="text-3xl font-bold mb-4">{t("cta.title")}</h2>
                         <p className="text-lg opacity-90 mb-8 max-w-xl mx-auto">
-                            Speak directly with our AR specialists. We&apos;ll help you understand if TRA 3D is right for your venue.
+                            {t("cta.subtitle")}
                         </p>
                         <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <a
+                            <Link
                                 href="/contact"
                                 className="h-14 px-8 rounded-2xl bg-white text-primary font-bold inline-flex items-center justify-center hover:bg-white/90 transition-all scale-100 active:scale-95 shadow-xl"
                             >
-                                Book a 15m Demo
-                            </a>
+                                {t("cta.book_demo")}
+                            </Link>
                             <a
                                 href="https://wa.me/yournumber"
                                 className="h-14 px-8 rounded-2xl bg-white/20 text-white font-bold backdrop-blur-sm inline-flex items-center justify-center border border-white/30 hover:bg-white/30 transition-all scale-100 active:scale-95"
                             >
-                                Chat on WhatsApp
+                                {t("cta.whatsapp")}
                             </a>
                         </div>
                     </div>

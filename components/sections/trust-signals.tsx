@@ -1,26 +1,31 @@
+"use client";
+
 import { Shield, Lock, CheckCircle, Globe } from "lucide-react";
+import { useTranslations } from "next-intl";
 
 export default function TrustSignals() {
+    const t = useTranslations("TrustSignals");
+
     const signals = [
         {
             icon: <Shield className="size-8 text-primary" />,
-            title: "GDPR Compliant",
-            description: "Your data and customer privacy are our top priority."
+            title: t("gdpr.title"),
+            description: t("gdpr.description")
         },
         {
             icon: <CheckCircle className="size-8 text-primary" />,
-            title: "99.9% Uptime",
-            description: "Reliable infrastructure ensures your menus are always accessible."
+            title: t("uptime.title"),
+            description: t("uptime.description")
         },
         {
             icon: <Lock className="size-8 text-primary" />,
-            title: "SSL Encrypted",
-            description: "All connections are secure and encrypted end-to-end."
+            title: t("ssl.title"),
+            description: t("ssl.description")
         },
         {
             icon: <Globe className="size-8 text-primary" />,
-            title: "Global Reach",
-            description: "Trusted by over 500 venues across 20+ countries."
+            title: t("global.title"),
+            description: t("global.description")
         }
     ];
 
@@ -44,3 +49,4 @@ export default function TrustSignals() {
         </section>
     );
 }
+

@@ -41,16 +41,16 @@ export default function InteractiveDemo() {
                     </div>
 
                     {/* Demo Video/Image */}
-                    <div className="relative">
-                        <div className="relative rounded-3xl overflow-hidden shadow-2xl">
+                    <div className="relative flex justify-center">
+                        <div className="relative rounded-3xl overflow-hidden shadow-2xl max-w-[85%]">
                             <video
                                 autoPlay
                                 loop
                                 muted
                                 playsInline
-                                className="w-full h-auto rounded-3xl"
+                                className="w-full h-auto"
                             >
-                                <source src="/phone/AR-Code-demo.mp4" type="video/mp4" />
+                                <source src="/phone/cake.mp4" type="video/mp4" />
                             </video>
                         </div>
 

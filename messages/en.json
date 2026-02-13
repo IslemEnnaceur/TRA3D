@@ -127,7 +127,7 @@
         "plans": {
             "starter": {
                 "name": "Starter",
-                "price": "$99",
+                "price": "99 DT",
                 "description": "Perfect for small cafes",
                 "cta": "Get Started",
                 "features": [
@@ -139,7 +139,7 @@
             },
             "pro": {
                 "name": "Professional",
-                "price": "$249",
+                "price": "249 DT",
                 "description": "Ideal for restaurants",
                 "cta": "Most Popular",
                 "features": [

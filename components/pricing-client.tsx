@@ -157,7 +157,7 @@ function PricingCard({ plan, isYearly, index }: { plan: PricingPlan; isYearly: b
             <div className="mb-8 p-6 rounded-3xl bg-muted/30">
                 <div className="flex items-baseline gap-2">
                     <span className="text-5xl font-black tracking-tighter">
-                        {typeof price === "number" ? `$${price}` : price}
+                        {typeof price === "number" ? `DT${price}` : price}
                     </span>
                     {typeof price === "number" && (
                         <span className="text-muted-foreground font-medium">

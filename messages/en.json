@@ -7,7 +7,8 @@
         "home": "Home",
         "pricing": "Pricing",
         "faq": "FAQ",
-        "contact": "Contact"
+        "contact": "Contact",
+        "qr_codes": "QR Codes"
     },
     "Hero": {
         "title": "Scanni <highlight>W 5alli l’espace yahki</highlight>",
@@ -455,6 +456,21 @@
                     "a": "No, we believe in transparent, one-time pricing for the assets. You own the 3D models and the forever-active QR codes."
                 }
             ]
+        }
+    },
+    "QRCodes": {
+        "title": "Interactive <highlight>AR Library</highlight>",
+        "subtitle": "Test our AR technology instantly. Simply scan any of the QR codes below with your smartphone camera.",
+        "description": "Experience life-size 3D models in your own space. No app required.",
+        "items": {
+            "cake": {
+                "name": "Luxury Cake",
+                "description": "See the fine details and textures of our premium pastry."
+            },
+            "f1": {
+                "name": "F1 Race Car",
+                "description": "Examine a high-fidelity Formula 1 car in full scale."
+            }
         }
     }
 }

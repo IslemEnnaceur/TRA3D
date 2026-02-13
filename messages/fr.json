@@ -7,7 +7,8 @@
         "home": "Accueil",
         "pricing": "Tarification",
         "faq": "FAQ",
-        "contact": "Contact"
+        "contact": "Contact",
+        "qr_codes": "Codes QR"
     },
     "Hero": {
         "title": "Scanni <highlight>W 5alli l’espace yahki</highlight>",
@@ -211,13 +212,13 @@
         }
     },
     "CTA": {
-        "title": "Prêt à Booster vos Ventes de 30% ?",
-        "subtitle": "+ de 500 établissements utilisent déjà le Code AR",
+        "title": "Ready to Boost Your Sales by 30%?",
+        "subtitle": "Join 500+ venues already using AR Code",
         "buttons": {
-            "quote": "Demander un Devis",
-            "pricing": "Voir les Tarifs"
+            "quote": "Request a Quote",
+            "pricing": "See Pricing"
         },
-        "trust": "✓ Délai de 5 jours ✓ Mises à jour incluses pendant 30 jours ✓ Modèles 3D personnalisés"
+        "trust": "✓ 5-day turnaround ✓ Updates included for 30 days ✓ Custom 3D models"
     },
     "Footer": {
         "links": {
@@ -328,7 +329,7 @@
                     },
                     {
                         "q": "Qu'est-ce que TRA 3D et comment aide-t-il mon entreprise ?",
-                        "a": "TRA 3D est une plateforme de commerce AR conçue pour combler le fossé entre les menus numériques et la réalité physique. Nous transformons vos photos 2D en modèles 3D haute fidélité que les clients peuvent projeter sur leurs tables, entraînant une augmentation de 25 à 40 % de la valeur des commandes et un engagement plus élevé."
+                        "a": "TRA 3D est une plateforme de commerce AR conçue pour comبل le fossé entre les menus numériques et la réalité physique. Nous transformons vos photos 2D en modèles 3D haute fidélité que les clients peuvent projeter sur leurs tables, entraînant une augmentation de 25 à 40 % de la valeur des commandes et un engagement plus élevé."
                     },
                     {
                         "q": "Comment puis-je obtenir mes codes QR ?",
@@ -455,6 +456,21 @@
                     "a": "No, nous croyons en une tarification unique et transparente pour les actifs. Vous êtes propriétaire des modèles 3D et des codes QR actifs à vie."
                 }
             ]
+        }
+    },
+    "QRCodes": {
+        "title": "Bibliothèque <highlight>AR Interactive</highlight>",
+        "subtitle": "Testez notre technologie AR instantanément. Scannez simplement l'un des codes QR ci-dessous avec l'appareil photo de votre smartphone.",
+        "description": "Découvrez des modèles 3D grandeur nature dans votre propre espace. Aucune application requise.",
+        "items": {
+            "cake": {
+                "name": "Gâteau de Luxe",
+                "description": "Découvrez les détails et les textures de notre pâtisserie haut de gamme."
+            },
+            "f1": {
+                "name": "Voiture de Course F1",
+                "description": "Examinez une voiture de Formule 1 haute fidélité à pleine échelle."
+            }
         }
     }
 }

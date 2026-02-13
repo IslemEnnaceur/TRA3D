@@ -16,6 +16,7 @@ export const HeroHeader = () => {
 
   const menuItems = [
     { name: t("home"), href: `/${locale}` },
+    { name: t("qr_codes"), href: `/${locale}/qr-codes` },
     { name: t("pricing"), href: `/${locale}/pricing` },
     { name: t("faq"), href: `/${locale}/faq` },
     { name: t("contact"), href: `/${locale}/contact` },
